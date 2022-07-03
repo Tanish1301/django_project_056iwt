@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dish">
+        dish 1:
+        <input type="text" name="child_1">
+        Quantity :
+        <input type="number" name="child_1">
+        <input type="button" id="add_button" onclick="add()" value="add" /><br></br>
+    </div>
+    <script>
+        var i = 1;
+
+        function add() {
+            i++;
+            var div = document.createElement('div');
+            var id = i;
+            div.innerHTML = 'dish' + id + ': <input type="text" name="dish"/>' + ': <input type="number" name="quantity"/>'+ ' <input type="button" id="add_button" onclick="add()" value="add" />' + ' <input type="button" id="remove_button" onclick="remove(this)" value="remove" />';
+            document.getElementById('dish').appendChild(div);
+        }
+
+        function remove(div) {
+            document.getElementById('dish').removeChild(div.parentNode);
+            i--;
+        }
+    </script>
+
+</body>
+
+</html>

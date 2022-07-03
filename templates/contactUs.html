@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">    
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+    <script  src="static/javaS.js"></script>
+    <title>Contact Us</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK4273p7V6C6M2sI1hhot9rpClauY6i_kS3g&usqp=CAU">
+        </div>
+        <ul>
+            <li class="item" onmouseover="mouseOv(document.getElementsByClassName('item'))" onmouseout="mouseOt(document.getElementsByClassName('item'))"><a id="1" onmouseover="mouseOv(document.getElementById('1'))" onmouseout="mouseOt(document.getElementById('1'))" href="/">Home</a></li>
+            <li class="item" onmouseover="mouseOv(document.getElementsByClassName('item'))" onmouseout="mouseOt(document.getElementsByClassName('item'))"><a id="2" onmouseover="mouseOv(document.getElementById('2'))" onmouseout="mouseOt(document.getElementById('2'))" href="/services">Services</a></li>
+            <li class="item" onmouseover="mouseOv(document.getElementsByClassName('item'))" onmouseout="mouseOt(document.getElementsByClassName('item'))"><a id="3" onmouseover="mouseOv(document.getElementById('3'))" onmouseout="mouseOt(document.getElementById('3'))" href="/sponcers">Our Sponsors</a></li>
+            <li class="item" onmouseover="mouseOv(document.getElementsByClassName('item'))" onmouseout="mouseOt(document.getElementsByClassName('item'))"><a id="4" onmouseover="mouseOv(document.getElementById('4'))" onmouseout="mouseOt(document.getElementById('4'))" href="/contact">Contact Us</a></li>
+            <li class="item" style="position: relative; left: 440px; background-color: orange;"><a href="/order">Order Now</a></li>
+        </ul>
+    </nav>
+    <div id="contact">
+        <h1 class="h-primary center">HELP AND SUPPORT</h1>
+        <div id="contact-box">
+            <form action="/contact" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" onmouseout="ValidateEmail(document.getElementById('email'))" name="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="phone" name="phone" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="message" style="height: 112px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <button style="margin: 20px auto; display: block;" class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="center">
+            www.sliggy.com
+        </div>
+    </footer>
+</body>
+</html>
